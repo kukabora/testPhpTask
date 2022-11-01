@@ -1,11 +1,21 @@
 <?php
+
+/**
+ * Файл, в котором производится выполнение всего кода.
+ * 
+ * Банальный файл в несколько строк где мы создаем объект
+ * от класса Init(), и вызываем его метод get. Все остальные махинации происходят
+ * внутри самого класса. За подробностями обратитесь к документации в нём самом =).
+ * После получения всех данных с помощью метода гет, мы запускаем вложенный
+ * цикл для отображения этих данных в консоли.
+ */
 require_once('init.php');
 $testingClass = new Init();
 $resultOfGetQuery = $testingClass->get();
 
-foreach ($resultOfGetQuery as $key => $value) {
-    foreach ($value as $key => $innerValue) {
-        print($key . ":" . $innerValue . "|");
+foreach ($resultOfGetQuery as $value) {
+    foreach ($value as $innerValue) {
+        print($innerValue . "|");
     }
     print("\n");
 }
