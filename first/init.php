@@ -40,8 +40,8 @@ final class Init
     $this->conn->query($preQuery);
     $queryStatement = "CREATE TABLE test(
       id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
-      create_time DATETIME COMMENT 'Create Time',
-      update_time DATETIME COMMENT 'Update Time',
+      create_time DATETIME COMMENT 'Create Time' DEFAULT NOW(),
+      update_time DATETIME COMMENT 'Update Time' DEFAULT NOW(),
       request VARCHAR(255) COMMENT '',
       result VARCHAR(255) COMMENT ''
     ) DEFAULT CHARSET UTF8 COMMENT '';";
